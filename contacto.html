@@ -1,30 +1,99 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contáctanos</title>
-     <link rel="stylesheet" href="Style.css">
+  <title>TravelBloom - Contact Us</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      
+    }
+
+    .hero {
+      background: url('ecuador.jpg') no-repeat center center/cover;
+      height: 100vh;
+      position: absolute;
+      width : 100%;
+       border: none; 
+       margin-top: 0px;
+    }
+
+    .content {
+      position: relative;
+      top: 30%;
+      left: 0%;
+      padding: 0 20px;
+    }
+
+    .content h1 {
+      font-size: 60px;
+      margin: 0;
+    }
+
+    .form-container {
+      position: absolute;
+      top: 25%;
+      right: 10%;
+      width: 400px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00bcd4;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .social {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .social a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <!-- Contenido principal -->
-    <div class="container1">
+  <div class="hero">
+    <div class="content">
         <h1>Contáctanos</h1>
         <p class="conta">¿Tienes preguntas o comentarios?<br> ¡Nos encantaría saber de ti! <br>Completa el formulario a continuación y te responderemos lo antes posible.</p>
-
-        <!-- Formulario de contacto -->
-        <form action="#" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
-
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-
-            <input type="submit" value="Enviar">
-        </form>
     </div>
-
+    
+    <div class="form-container">
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea rows="5" placeholder="Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
