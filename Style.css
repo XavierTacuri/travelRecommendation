@@ -208,3 +208,83 @@
      text-align: left;
    font-family: fantasy;
 }
+
+    .hero3 {
+      background: url('ecuador.jpg') no-repeat center center/cover;
+      height: 100vh;
+      position: absolute;
+      width : 100%;
+       border: none; 
+       margin-top: 0px;
+    }
+
+    .content3 {
+      position: relative;
+      top: 30%;
+      left: 0%;
+      padding: 0 20px;
+    }
+
+    .content3 h1 {
+      font-size: 60px;
+      margin: 0;
+    }
+
+    .form-container3 {
+      position: absolute;
+      top: 25%;
+      right: 10%;
+      width: 400px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .form-container3 input,
+    .form-container3 textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .form-container3 button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00bcd4;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .social {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .social a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+      body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      
+    }
+     .estiloBonito {
+    color: rgb(171, 78, 78);
+    background-color:#a2bfdc86;
+    padding: 15px;
+    border-radius: 8px;
+  }

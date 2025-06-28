@@ -1,5 +1,7 @@
 let datosGlobales = {};
-
+let pagina1 = 'inicio.html';
+let about1 = 'nosotros.html';
+let contacto ='contacto.html';
 function cargarRecomendaciones() {
   fetch('travel_recommendation_api.json')
     .then(response => response.json())
@@ -13,6 +15,7 @@ function cargarRecomendaciones() {
 function mostrarTodasLasRecomendaciones(data) {
   const contenedor = document.getElementById('recommendations');
   contenedor.innerHTML = '';
+  
 
   mostrarSeccion("Templos Recomendados", data.temples);
   mostrarSeccion("Playas Recomendadas", data.beaches);
@@ -20,11 +23,18 @@ function mostrarTodasLasRecomendaciones(data) {
   data.countries.forEach(pais => {
     mostrarSeccion(`Ciudades en ${pais.name}`, pais.cities);
   });
+  
 }
 
 function mostrarSeccion(titulo, lista) {
   const contenedor = document.getElementById('recommendations');
-  const seccion = document.createElement('div');
+ contenedor.style.backgroundImage="url('cielo.jpeg')";
+ contenedor.style.backgroundSize = "cover";
+contenedor.style.backgroundPosition = "center";
+contenedor.style.backgroundRepeat = "no-repeat";
+ const seccion = document.createElement('div');
+  //var frame=document.getElementById('cuerpo');
+  seccion.style.backgroundColor= "#a2bfdc86";
   seccion.classList.add('seccion');
 
   const encabezado = document.createElement('h2');
@@ -33,6 +43,9 @@ function mostrarSeccion(titulo, lista) {
 
   lista.forEach(item => {
     const card = document.createElement('div');
+    //card.classList.add('estiloBonito');
+    card.style.backgroundColor= "#a2bfdc86";
+    card.style.textAlign="center";
     card.className = 'card';
     card.innerHTML = `
       <h3>${item.name}</h3>
@@ -43,6 +56,7 @@ function mostrarSeccion(titulo, lista) {
   });
 
   contenedor.appendChild(seccion);
+  //frame.src=pagina;
 }
 
 function buscarPorPalabraClave() {
@@ -85,11 +99,26 @@ function limpiarResultados() {
   document.getElementById('searchInput').value = '';
   mostrarTodasLasRecomendaciones(datosGlobales);
 }
+function cargarContenido(pagina){
+ //document.getElementById('recommendations').innerHTML=inico;
+ fetch(pagina)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('recommendations').innerHTML = data;
+        })
+        .catch(error => {
+          document.getElementById('recommendations').innerHTML = "Error al cargar el contenido.";
+          console.error("Error al cargar:", error);
+        }); 
+}
 
 // Asignar funciones a botones
+//document.getElementById('nosotros').addEventListener('click',cargarInico(about1));
+  //document.getElementById('inicio').addEventListener('click',cargarInico(pagina1));
+  
 window.onload = () => {
   cargarRecomendaciones();
-
+  
   document.getElementById('searchButton').addEventListener('click', buscarPorPalabraClave);
   document.getElementById('clearButton').addEventListener('click', limpiarResultados);
-};
+  };
