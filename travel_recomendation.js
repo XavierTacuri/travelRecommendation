@@ -4,10 +4,12 @@ let about1 = 'nosotros.html';
 let contacto ='contacto.html';
 function cargarRecomendaciones() {
   fetch('travel_recommendation_api.json')
+     
     .then(response => response.json())
     .then(data => {
       datosGlobales = data; // Guardar datos para búsquedas futuras
       //mostrarTodasLasRecomendaciones(data);
+      
     })
     .catch(error => console.error('Error al cargar JSON:', error));
 }
@@ -115,10 +117,12 @@ function cargarContenido(pagina){
 // Asignar funciones a botones
 //document.getElementById('nosotros').addEventListener('click',cargarInico(about1));
   //document.getElementById('inicio').addEventListener('click',cargarInico(pagina1));
+ 
   
+
 window.onload = () => {
   cargarRecomendaciones();
-  
+  cargarContenido(pagina1);
   document.getElementById('searchButton').addEventListener('click', buscarPorPalabraClave);
   document.getElementById('clearButton').addEventListener('click', limpiarResultados);
   };
